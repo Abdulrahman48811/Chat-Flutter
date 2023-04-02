@@ -27,7 +27,36 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       body: Container(
-        child: Text('Test'),
+        padding: EdgeInsets.symmetric(
+          horizontal: 20,
+          vertical: 15,
+        ),
+        child: Row(
+          children: <Widget>[
+            Container(
+              padding: EdgeInsets.all(2),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(40)),
+                border: Border.all(
+                  width: 2,
+                  color: Colors.teal,
+                ),
+                // shape: BoxShape.circle,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 2,
+                    blurRadius: 5,
+                  ),
+                ],
+              ),
+              child: CircleAvatar(
+                radius: 35,
+                backgroundImage: AssetImage('assets/images/ironman.jpeg'),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
