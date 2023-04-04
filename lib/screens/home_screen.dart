@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:chat_flutter/models/message_model.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -26,9 +27,11 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          Container(
+      body: ListView.builder(
+        itemCount: chats.length,
+        itemBuilder: (BuildContext context, int index) {
+          final Message chat = chats[index];
+          return Container(
             padding: EdgeInsets.symmetric(
               horizontal: 20,
               vertical: 15,
@@ -54,7 +57,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   child: CircleAvatar(
                     radius: 35,
-                    backgroundImage: AssetImage('assets/images/ironman.jpeg'),
+                    backgroundImage: AssetImage(chat.sender.imageUrl),
                   ),
                 ),
                 Container(
@@ -68,14 +71,14 @@ class HomeScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
                           Text(
-                            'Iron Man',
+                            chat.sender.name,
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
                           Text(
-                            '12:20pm',
+                            chat.time,
                             style: TextStyle(
                               fontSize: 11,
                               fontWeight: FontWeight.w300,
@@ -90,7 +93,7 @@ class HomeScreen extends StatelessWidget {
                       Container(
                         alignment: Alignment.topLeft,
                         child: Text(
-                          'Hey dude! Even dead I\'m the hero. Love you 3000 guys.',
+                          chat.text,
                           style: TextStyle(
                             fontSize: 13,
                             color: Colors.black54,
@@ -104,17 +107,8 @@ class HomeScreen extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-          Container(
-            child: Text('data'),
-          ),
-          Container(
-            child: Text('data'),
-          ),
-          Container(
-            child: Text('data'),
-          ),
-        ],
+          );
+        },
       ),
     );
   }
