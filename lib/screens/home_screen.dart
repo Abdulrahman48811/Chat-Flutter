@@ -40,21 +40,32 @@ class HomeScreen extends StatelessWidget {
               children: <Widget>[
                 Container(
                   padding: EdgeInsets.all(2),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(40)),
-                    border: Border.all(
-                      width: 2,
-                      color: Colors.teal,
-                    ),
-                    // shape: BoxShape.circle,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 2,
-                        blurRadius: 5,
-                      ),
-                    ],
-                  ),
+                  decoration: chat.unread
+                      ? BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(40)),
+                          border: Border.all(
+                            width: 2,
+                            color: Colors.teal,
+                          ),
+                          // shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 2,
+                              blurRadius: 5,
+                            ),
+                          ],
+                        )
+                      : BoxDecoration(
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 2,
+                              blurRadius: 5,
+                            ),
+                          ],
+                        ),
                   child: CircleAvatar(
                     radius: 35,
                     backgroundImage: AssetImage(chat.sender.imageUrl),
