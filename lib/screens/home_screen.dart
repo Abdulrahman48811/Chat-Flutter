@@ -77,16 +77,34 @@ class HomeScreen extends StatelessWidget {
                     left: 20,
                   ),
                   child: Column(
-                    children: [
+                    children: <Widget>[
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
-                          Text(
-                            chat.sender.name,
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                            ),
+                          Row(
+                            children: [
+                              Text(
+                                chat.sender.name,
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              chat.sender.isOnline
+                                  ? Container(
+                                      margin: const EdgeInsets.only(
+                                        left: 5,
+                                      ),
+                                      width: 7,
+                                      height: 7,
+                                      decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          color: Colors.amber),
+                                    )
+                                  : Container(
+                                      child: null,
+                                    ),
+                            ],
                           ),
                           Text(
                             chat.time,
