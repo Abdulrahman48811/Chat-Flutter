@@ -8,6 +8,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        brightness: Brightness.dark,
         elevation: 13,
         leading: IconButton(
           icon: Icon(Icons.menu),

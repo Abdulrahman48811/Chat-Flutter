@@ -13,6 +13,7 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFF6F6F6),
       appBar: AppBar(
         brightness: Brightness.dark,
         centerTitle: true,
@@ -46,8 +47,22 @@ class _ChatScreenState extends State<ChatScreen> {
           },
         ),
       ),
-      body: Container(
-        child: Text('data'),
+      body: Column(
+        children: <Widget>[
+          Column(
+            children: <Widget>[
+              Container(
+                child: Text('data'),
+              ),
+              Container(
+                child: Text('data'),
+              ),
+              Container(
+                child: Text('data'),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
