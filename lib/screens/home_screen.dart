@@ -36,7 +36,9 @@ class HomeScreen extends StatelessWidget {
             onTap: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (_) => ChatScreen(),
+                builder: (_) => ChatScreen(
+                  user: chat.sender,
+                ),
               ),
             ),
             child: Container(
