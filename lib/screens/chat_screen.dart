@@ -49,18 +49,23 @@ class _ChatScreenState extends State<ChatScreen> {
       ),
       body: Column(
         children: <Widget>[
-          Column(
-            children: <Widget>[
-              Container(
-                child: Text('data'),
-              ),
-              Container(
-                child: Text('data'),
-              ),
-              Container(
-                child: Text('data'),
-              ),
-            ],
+          Expanded(
+            child: Column(
+              children: <Widget>[
+                Container(
+                  child: Text('data'),
+                ),
+                Container(
+                  child: Text('data'),
+                ),
+                Container(
+                  child: Text('data'),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            child: Text('Send Message Txtv area'),
           ),
         ],
       ),
