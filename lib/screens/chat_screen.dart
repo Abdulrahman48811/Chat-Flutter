@@ -53,7 +53,23 @@ class _ChatScreenState extends State<ChatScreen> {
             child: Column(
               children: <Widget>[
                 Container(
-                  child: Text('data'),
+                  child: Container(
+                    padding: EdgeInsets.all(10),
+                    margin: EdgeInsets.symmetric(vertical: 10),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(15),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 5,
+                        ),
+                      ],
+                    ),
+                    child: Text(
+                        'Hey dude! Even dead I\'m the hero. Love you 3000 guys.'),
+                  ),
                 ),
                 Container(
                   child: Text('data'),
