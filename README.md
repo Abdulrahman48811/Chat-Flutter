@@ -4,7 +4,7 @@ This is a chat application UI created in Flutter.
 
 ## App Preview
 
-![App Demo](chat-app-demo.gif)
+![App Demo](assets/chat-app-demo.gif)
 
 ## Getting Started
 
